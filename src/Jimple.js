@@ -27,7 +27,8 @@ function checkDefined(container, key) {
 }
 
 function addFunctionTo(set, fn) {
-    assert(isFunction(fn), "Service definition is not a Closure or invokable object");
+    // Do not check for this for now because an async function will cause this to fail.
+    //assert(isFunction(fn), "Service definition is not a Closure or invokable object");
     set.add(fn);
     return fn;
 }
